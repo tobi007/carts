@@ -13,13 +13,13 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Building...'
+                echo 'Testing...'
                 sh 'mvn test'
             }
         }
         stage('Package') {
             steps {
-                echo 'Building...'
+                echo 'Packaging...'
                 sh 'mvn -DskipTests package'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
